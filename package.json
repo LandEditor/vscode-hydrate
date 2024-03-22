@@ -1,8 +1,32 @@
 {
-	"activationEvents": [
-		"onView:extension.vsKubernetesExplorer",
-		"onCommand:vshydrate.hydrateCluster"
-	],
+	"name": "vscode-hydrate",
+	"displayName": "VSCode Hydrate",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Hydrate for VSCode Kubernetes Tools",
+	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
+	"bugs": {
+		"url": "https://github.com/CodeEditorLand/Foundation/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Playform",
+		"email": "Hello@Playform.Cloud",
+		"url": "https://playform.cloud"
+	},
+	"type": "module",
+	"main": "./out/extension.js",
+	"scripts": {
+		"compile": "tsc -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
+		"vscode:prepublish": "npm run compile",
+		"watch": "tsc -watch -p ./"
+	},
 	"contributes": {
 		"commands": [
 			{
@@ -20,10 +44,13 @@
 			]
 		}
 	},
+	"activationEvents": [
+		"onView:extension.vsKubernetesExplorer",
+		"onCommand:vshydrate.hydrateCluster"
+	],
 	"dependencies": {
 		"vscode-kubernetes-tools-api": "1.3.0"
 	},
-	"description": "Hydrate for VSCode Kubernetes Tools",
 	"devDependencies": {
 		"@types/glob": "8.1.0",
 		"@types/mocha": "10.0.6",
@@ -36,19 +63,11 @@
 		"typescript-esbuild": "0.4.5",
 		"vscode": "1.1.36"
 	},
-	"displayName": "VSCode Hydrate",
 	"extensionDependencies": [
 		"ms-kubernetes-tools.vscode-kubernetes-tools"
 	],
-	"main": "./out/extension.js",
-	"name": "vscode-hydrate",
-	"preview": true,
-	"scripts": {
-		"compile": "tsc -p ./",
-		"postinstall": "node ./node_modules/vscode/bin/install",
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
-		"vscode:prepublish": "npm run compile",
-		"watch": "tsc -watch -p ./"
+	"publishConfig": {
+		"access": "public"
 	},
-	"type": "module"
+	"preview": true
 }
