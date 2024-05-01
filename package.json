@@ -53,11 +53,11 @@
 	"devDependencies": {
 		"@playform/build": "0.0.7",
 		"@playform/document": "0.0.6",
-		"@types/glob": "^7.1.1",
-		"@types/node": "^8.10.0",
-		"@types/sinon": "^7.0.13",
-		"glob": "^7.1.4",
-		"sinon": "^7.3.2"
+		"@types/glob": "8.1.0",
+		"@types/node": "20.12.7",
+		"@types/sinon": "17.0.3",
+		"glob": "10.3.12",
+		"sinon": "17.0.1"
 	},
 	"extensionDependencies": [
 		"ms-kubernetes-tools.vscode-kubernetes-tools"
