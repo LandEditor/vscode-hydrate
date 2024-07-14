@@ -1,11 +1,8 @@
 {
-	"name": "vscode-hydrate",
-	"displayName": "VSCode Hydrate",
-	"description": "Hydrate for VSCode Kubernetes Tools",
-	"main": "./out/extension.js",
-	"scripts": {
-		"compile": "tsc -p ./"
-	},
+	"activationEvents": [
+		"onView:extension.vsKubernetesExplorer",
+		"onCommand:vshydrate.hydrateCluster"
+	],
 	"contributes": {
 		"commands": [
 			{
@@ -23,11 +20,8 @@
 			]
 		}
 	},
-	"activationEvents": [
-		"onView:extension.vsKubernetesExplorer",
-		"onCommand:vshydrate.hydrateCluster"
-	],
 	"dependencies": {},
+	"description": "Hydrate for VSCode Kubernetes Tools",
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
 		"@types/node": "^8.10.0",
@@ -35,8 +29,14 @@
 		"glob": "^7.1.4",
 		"sinon": "^7.3.2"
 	},
+	"displayName": "VSCode Hydrate",
 	"extensionDependencies": [
 		"ms-kubernetes-tools.vscode-kubernetes-tools"
 	],
-	"preview": true
+	"main": "./out/extension.js",
+	"name": "vscode-hydrate",
+	"preview": true,
+	"scripts": {
+		"compile": "tsc -p ./"
+	}
 }
