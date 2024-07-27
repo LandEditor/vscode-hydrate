@@ -1,6 +1,10 @@
-import {getVscodeKubeConfig, getDefaultKubeConfig, getEnvKubeConfig} from './getKubeHelpers';
+import {
+	getVscodeKubeConfig,
+	getDefaultKubeConfig,
+	getEnvKubeConfig,
+} from "./getKubeHelpers";
 
-export function getKubeConfig () : string {
+export function getKubeConfig(): string {
 	let kubeConfig = getVscodeKubeConfig();
 	if (!kubeConfig) {
 		kubeConfig = getEnvKubeConfig();
@@ -10,5 +14,5 @@ export function getKubeConfig () : string {
 		kubeConfig = getDefaultKubeConfig();
 	}
 
-	return kubeConfig;	
+	return kubeConfig;
 }
