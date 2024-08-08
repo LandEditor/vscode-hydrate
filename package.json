@@ -24,7 +24,7 @@
 	"description": "Hydrate for VSCode Kubernetes Tools",
 	"devDependencies": {
 		"@types/glob": "8.1.0",
-		"@types/node": "22.0.2",
+		"@types/node": "22.1.0",
 		"@types/sinon": "17.0.3",
 		"glob": "11.0.0",
 		"sinon": "18.0.0"
