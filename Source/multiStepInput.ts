@@ -56,6 +56,7 @@ export class MultiStepInput {
 
 	static async run<T>(start: InputStep) {
 		const input = new MultiStepInput();
+
 		return input.stepThrough(start);
 	}
 
@@ -65,9 +66,12 @@ export class MultiStepInput {
 
 	private async stepThrough<T>(start: InputStep): Promise<boolean> {
 		let step: InputStep | void = start;
+
 		let inputCompleted = true;
+
 		while (step) {
 			this.steps.push(step);
+
 			if (this.current) {
 				this.current.enabled = false;
 				this.current.busy = true;
@@ -100,6 +104,7 @@ export class MultiStepInput {
 		//   this.current.dispose();
 		// }
 		// this.current = input;
+
 		throw InputFlowAction.Back;
 	}
 
@@ -118,6 +123,7 @@ export class MultiStepInput {
 		shouldResume,
 	}: P) {
 		const disposables: Disposable[] = [];
+
 		try {
 			return await new Promise<any>((resolve, reject) => {
 				const input = window.createInputBox();
@@ -147,6 +153,7 @@ export class MultiStepInput {
 						const value = input.value;
 						input.enabled = false;
 						input.busy = true;
+
 						if (!(await validate(value))) {
 							if (convert) {
 								resolve(await convert(value));
@@ -160,7 +167,9 @@ export class MultiStepInput {
 					input.onDidChangeValue(async (text) => {
 						const current = validate(text);
 						validating = current;
+
 						const validationMessage = await current;
+
 						if (current === validating) {
 							input.validationMessage = validationMessage;
 						}
@@ -182,6 +191,7 @@ export class MultiStepInput {
 					this.current.dispose();
 				}
 				this.current = input;
+
 				setTimeout(() => input.show(), 5);
 			});
 		} finally {
@@ -208,6 +218,7 @@ export class MultiStepInput {
 		shouldResume,
 	}: P) {
 		const disposables: Disposable[] = [];
+
 		try {
 			return await new Promise<any>((resolve, reject) => {
 				const input = window.createQuickPick<T>();
@@ -220,6 +231,7 @@ export class MultiStepInput {
 				input.matchOnDetail = !!matchOnDetail;
 				input.canSelectMany = !!canPickMany;
 				input.items = items;
+
 				if (activeItem) {
 					input.activeItems = [activeItem];
 				}
@@ -242,6 +254,7 @@ export class MultiStepInput {
 						let convertedItems: any[] = await Promise.all(
 							input.selectedItems.map((v) => convert!(v)),
 						);
+
 						if (canPickMany) {
 							resolve(convertedItems);
 						} else {
@@ -265,6 +278,7 @@ export class MultiStepInput {
 					this.current.dispose();
 				}
 				this.current = input;
+
 				setTimeout(() => input.show(), 5);
 			});
 		} finally {

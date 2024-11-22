@@ -6,6 +6,7 @@ import {
 
 export function getKubeConfig(): string {
 	let kubeConfig = getVscodeKubeConfig();
+
 	if (!kubeConfig) {
 		kubeConfig = getEnvKubeConfig();
 	}

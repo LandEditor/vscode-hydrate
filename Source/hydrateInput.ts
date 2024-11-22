@@ -103,6 +103,7 @@ export class HydrateInput {
 		if (flags) {
 			this.dryRun = flags.includes("Dry Run");
 			this.verbose = flags.includes("Verbose Mode");
+
 			if (this.dryRun) {
 				this.args.push(" -d");
 			}
