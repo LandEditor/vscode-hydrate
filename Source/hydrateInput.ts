@@ -4,6 +4,7 @@ import { MultiStepInput } from "./multiStepInput";
 
 export class HydrateInput {
 	readonly TITLE: string = "Enter Hydrate Arguments";
+
 	readonly FLAGS: vscode.QuickPickItem[] = [
 		{
 			label: "Dry Run",
@@ -11,19 +12,28 @@ export class HydrateInput {
 		},
 		{ label: "Verbose Mode", description: "(prints verbose output logs)" },
 	];
+
 	readonly TOTAL_STEPS: number = 4;
 
 	componentName: string;
+
 	outputPath: string;
+
 	dryRun: boolean;
+
 	verbose: boolean;
+
 	args: string[];
 
 	constructor() {
 		this.componentName = "";
+
 		this.outputPath = "";
+
 		this.dryRun = false;
+
 		this.verbose = false;
+
 		this.args = [];
 	}
 
@@ -34,6 +44,7 @@ export class HydrateInput {
 			// command cancelled
 			return false;
 		}
+
 		return true;
 	}
 
@@ -102,11 +113,13 @@ export class HydrateInput {
 
 		if (flags) {
 			this.dryRun = flags.includes("Dry Run");
+
 			this.verbose = flags.includes("Verbose Mode");
 
 			if (this.dryRun) {
 				this.args.push(" -d");
 			}
+
 			if (this.verbose) {
 				this.args.push(" -v");
 			}

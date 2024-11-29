@@ -23,6 +23,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	}
 
 	clusterExplorer = clusterExplorerAPI.api;
+
 	kubectl = kubectlAPI.api;
 
 	const subscriptions = [
@@ -64,7 +65,9 @@ export async function hydrateCluster() {
 		});
 
 		term.show();
+
 		term.sendText(dockerPull);
+
 		term.sendText(dockerRun);
 	}
 }
