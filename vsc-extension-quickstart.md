@@ -3,7 +3,7 @@
 This extension will allow users to select a Kubernetes cluster to run Hydrate
 on. This quickstart guide will be continuously updated as features are added.
 Currently, the extension builds upon the existing
-[`VSCode Kubernetes Extension`](HTTPS://github.com/Azure/vscode-kubernetes-tools).
+[`VSCode Kubernetes Extension`](https://github.com/Azure/vscode-kubernetes-tools).
 Upon right-clicking a cluster, an option to "Hydrate Cluster" is shown.
 Hydrating the selected cluster will generate a `component.yaml` file in the same
 directory as the user's Hydrate clone.
@@ -65,8 +65,8 @@ directory as the user's Hydrate clone.
 ## Go further
 
 -   Reduce the extension size and improve the startup time by
-    [`bundling your extension`](HTTPS://code.visualstudio.com/api/working-with-extensions/testing-extension).
--   [`Publish your extension`](HTTPS://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+    [`bundling your extension`](https://code.visualstudio.com/api/working-with-extensions/testing-extension).
+-   [`Publish your extension`](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
     on the VSCode extension marketplace.
 -   Automate builds by setting up
-    [`Continuous Integration`](HTTPS://code.visualstudio.com/api/working-with-extensions/continuous-integration).
+    [`Continuous Integration`](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
