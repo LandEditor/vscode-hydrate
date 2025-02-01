@@ -30,7 +30,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@types/glob": "8.1.0",
-		"@types/node": "22.10.10",
+		"@types/node": "22.13.0",
 		"@types/sinon": "17.0.3",
 		"glob": "11.0.1",
 		"sinon": "19.0.2"
